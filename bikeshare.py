@@ -1,3 +1,7 @@
+# Created July 9th, 2023.
+# User-friendly interactive environment that calculates statistics for bikeshare data using user inputs
+# related to location, month, and day of the week.
+
 import time
 import pandas as pd
 import numpy as np
