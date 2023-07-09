@@ -7,7 +7,7 @@ July 9th, 2023
 Explore US Bikeshare Data
 
 ### Description
-User-friendly interactive environment that calculates statistics for bikeshare data using user inputs related to location, month, and day of the week.
+**User-friendly** interactive environment that calculates **statistics for bikeshare data** using user inputs related to **location**, **month**, **and day of the week**.
 
 ### Files used
 bikeshare.py
