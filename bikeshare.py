@@ -4,7 +4,6 @@
 
 import time
 import pandas as pd
-import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -19,10 +18,15 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
+
+    city_list = ['chicago', 'new york city', 'washington']
+    month_list = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+    day_list = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input('Would you like to see data for Chicago, New York, or Washington? ').lower()
-    while city not in ['chicago', 'new york city', 'washington']:
+    while city not in city_list:
         city = input('Invalid input. Please try again. ').lower()
 
     # Ask if they want to filter by month, day, or not at all?
@@ -32,23 +36,23 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
         day = 'all'
         month = input('Which month - January, February, March, April, May, or June? ').lower()
-        while month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
+        while month not in month_list:
             month = input('Invalid input. Please try again. ').lower()
 
     if filter == 'day':
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
         month = 'all'
         day = input('Which day - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday? ').lower()
-        while day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
+        while day not in day_list:
             day = input('Invalid input. Please try again. ').lower()
 
     if filter == 'both':
         month = input('Which month - January, February, March, April, May, or June? ').lower()
-        while month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
+        while month not in month_list:
             month = input('Invalid input. Please try again. ').lower()
 
         day = input('Which day - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday? ').lower()
-        while day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
+        while day not in day_list:
             day = input('Invalid input. Please try again. ').lower()
 
     else:
@@ -131,11 +135,11 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     common_start_station = df['Start Station'].mode()[0]
-    print('Most Commonly Used Start Station:', common_start_station)
+    print('Most Popular Start Station:', common_start_station)
 
     # TO DO: display most commonly used end station
     common_end_station = df['End Station'].mode()[0]
-    print('Most Commonly Used End Station:', common_end_station)
+    print('Most Popular End Station:', common_end_station)
 
     # TO DO: display most frequent combination of start station and end station trip
     # Combine the start and end station into one string
